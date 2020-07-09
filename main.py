@@ -45,7 +45,7 @@ class VAE(nn.Module):
         self.tconv3 = nn.ConvTranspose2d(256, 128, kernel_size=4, stride=2, padding=1)
         self.bn3 = nn.BatchNorm2d(128)
         self.tconv4 = nn.ConvTranspose2d(128, 64, kernel_size=4, stride=2, padding=1)
-        self.bn4 = nn.BatchNorm2d(512)
+        self.bn4 = nn.BatchNorm2d(64)
         self.tconv5 = nn.ConvTranspose2d(64, 3, kernel_size=4, stride=2, padding=1)
 
     def sampling(self,x):
