@@ -178,7 +178,7 @@ def main():
         torch.cuda.manual_seed(args.seed)
     device = torch.device("cuda" if use_cuda else "cpu")  
     coding_size = 500
-    dataloaders,test_set,dataset_sizes = data_preprocessing(args.batch_size,False)
+    dataloaders,test_set,dataset_sizes = data_preprocessing(args.batch_size,True)
     model = VAE(coding_size).to(device)
     optimizer = torch.optim.Adam(model.parameters(),lr=args.lr)
     scheduler = StepLR(optimizer,step_size=10,gamma=args.gamma)
